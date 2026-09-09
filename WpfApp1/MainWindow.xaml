@@ -7,6 +7,6 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800" Background="Red">
     <Grid>
-        <Label Content="it is my go!!!!!" FontSize="30px" Foreground="gold" HorizontalAlignment="Center" Margin="20px"></Label>
+        <Label Content="it is my go!!!!!!" FontSize="30px" Foreground="gold" HorizontalAlignment="Center" Margin="20px"></Label>
     </Grid>
 </Window>
