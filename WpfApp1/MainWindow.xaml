@@ -5,8 +5,49 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfApp1"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800" Background="Red">
-    <Grid>
-        <Label Content="it is my go!!!!!!" FontSize="30px" Foreground="gold" HorizontalAlignment="Center" Margin="20px"></Label>
+        Title="MainWindow" Height="450" Width="800" Background="White">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!-- 使用者資訊區塊 -->
+        <GroupBox Grid.Column="0" Grid.Row="0">
+            <StackPanel Margin="8">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <Label Width="60" VerticalAlignment="Center">姓名：</Label>
+                    <TextBox x:Name="NameTextBox" Width="160" />
+                </StackPanel>
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <Label Width="60" VerticalAlignment="Center">年齡：</Label>
+                    <TextBox x:Name="AgeTextBox" Width="80" />
+                </StackPanel>
+                <Button x:Name="ShowInfoButton" Content="顯示使用者資訊" Width="160" Height="36" Click="OnShowInfoClick" />
+            </StackPanel>
+        </GroupBox>
+
+        <!-- 乘法表區塊 -->
+        <GroupBox Grid.Column="1" Grid.Row="0">
+            <StackPanel Margin="8">
+                <StackPanel Orientation="Horizontal" Margin="0,0,0,6">
+                    <Label Width="100" VerticalAlignment="Center">輸入數字 N：</Label>
+                    <TextBox x:Name="NumberInputTextBox" Width="80" />
+                    <Button x:Name="GenerateTableButton" Content="產生乘法表" Width="120" Height="32" Click="OnGenerateTableClick" Margin="6,0,0,0" />
+                </StackPanel>
+            </StackPanel>
+        </GroupBox>
+
+        <!-- 顯示區域 -->
+        <GroupBox Grid.Column="0" Grid.Row="2" Grid.ColumnSpan="2">
+            <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" Padding="6" Foreground="Red">
+                <TextBlock x:Name="TableTextBlock" FontFamily="Consolas" TextWrapping="NoWrap" Foreground="Black" />
+            </ScrollViewer>
+        </GroupBox>
     </Grid>
 </Window>
